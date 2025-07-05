@@ -34,7 +34,9 @@ const prompt = ai.definePrompt({
   output: {schema: CategorizeProductsOutputSchema},
   prompt: `You are an expert video game product categorization specialist.
 
-You will use the product description to determine the appropriate category for the product.
+Your task is to categorize the video game based on its description.
+Please select the most fitting category from the following list: RPG, Shooter, Puzzle, Strategy, Action, Racing, Survival Horror, Deck-builder.
+If none of these categories seem appropriate, you may provide a different, more suitable category. You must provide a category.
 
 Description: {{{productDescription}}}
 `,
@@ -47,7 +49,10 @@ const categorizeProductsFlow = ai.defineFlow(
     outputSchema: CategorizeProductsOutputSchema,
   },
   async input => {
-    const {output} = await prompt(input);
-    return output!;
+    const {output, finishReason} = await prompt(input);
+    if (!output) {
+      throw new Error(`AI failed to categorize product. Finish reason: ${finishReason}`);
+    }
+    return output;
   }
 );
