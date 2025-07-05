@@ -4,30 +4,29 @@ import { fuzzySearchProducts } from '@/ai/flows/fuzzy-search-products';
 import type { Product } from '@/lib/products';
 import { z } from 'zod';
 
-const searchSchema = z.string().min(1, 'Please enter a search term.');
+const searchSchema = z.string();
 
 export async function searchProductsAction(
   allProducts: Product[],
   prevState: any,
   formData: FormData
 ): Promise<{ products: Product[]; message: string, searchTerm: string }> {
-  const searchTerm = formData.get('search') as string;
+  const searchTerm = (formData.get('search') as string) || '';
 
-  const validatedSearch = searchSchema.safeParse(searchTerm);
-
-  if (!validatedSearch.success) {
-    return { products: allProducts, message: validatedSearch.error.errors[0].message, searchTerm: '' };
+  if (!searchTerm.trim()) {
+    return { products: allProducts, message: '', searchTerm: '' };
   }
 
   try {
     const aiResults = await fuzzySearchProducts({
-      searchTerm: validatedSearch.data,
+      searchTerm: searchTerm,
       products: allProducts.map(p => ({ id: p.id, title: p.title, description: p.description })),
     });
 
     const productMap = new Map(allProducts.map(p => [p.id, p]));
+    
+    // The AI now returns sorted and filtered results. We just need to map them back to the full product object.
     const sortedProducts = aiResults
-      .filter(result => result.similarityScore > 0.5) // Filter out low-similarity results
       .map(result => productMap.get(result.id)!)
       .filter(Boolean);
 
