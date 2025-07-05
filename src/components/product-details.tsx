@@ -59,7 +59,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
           </div>
           <div className="mt-auto pt-4">
             <Button size="lg" className="w-full md:w-auto" onClick={handleAddToCart}>
-              Add to Cart
+              Añadir al carrito
             </Button>
           </div>
         </div>
