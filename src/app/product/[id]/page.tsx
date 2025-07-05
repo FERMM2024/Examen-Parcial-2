@@ -49,7 +49,7 @@ export default async function ProductPage({ params }: { params: { id: string } }
       <main className="flex-1 container mx-auto px-4 py-8">
         <div className="mb-6">
           <Button asChild variant="outline">
-            <Link href="/">
+            <Link href="/catalog">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Catalog
             </Link>
