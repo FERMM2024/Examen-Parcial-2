@@ -8,20 +8,17 @@ import { ProductCard } from '@/components/product-card';
 import { WelcomeTour } from '@/components/welcome-tour';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Search, Swords, Puzzle, Map as MapIcon, Target, X } from 'lucide-react';
+import { Search, Gamepad2, Disc3, Headphones, X } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const categoryIcons: { [key: string]: React.ElementType } = {
-  'RPG': Swords,
-  'Shooter': Target,
-  'Puzzle': Puzzle,
-  'Strategy': MapIcon,
-  // Add more mappings as categories are discovered
+  'Juegos': Disc3,
+  'Consolas': Gamepad2,
+  'Accesorios': Headphones,
 };
 
 const getCategoryIcon = (category: string) => {
-  const normalizedCategory = Object.keys(categoryIcons).find(key => category.toLowerCase().includes(key.toLowerCase()));
-  return normalizedCategory ? categoryIcons[normalizedCategory] : Puzzle;
+  return categoryIcons[category] || X;
 };
 
 interface ProductCatalogProps {
@@ -80,7 +77,7 @@ export function ProductCatalog({ allProducts }: ProductCatalogProps) {
         <div id="filters" className="mb-8 p-4 bg-card rounded-lg shadow-sm border">
           <div className="flex flex-col md:flex-row gap-6">
             <div className="flex-grow">
-              <h3 className="text-lg font-semibold mb-3">Categories</h3>
+              <h3 className="text-lg font-semibold mb-3">Categorías</h3>
               <div className="flex flex-wrap gap-2">
                 <Button
                   variant={activeCategory === null ? 'default' : 'outline'}
@@ -88,7 +85,7 @@ export function ProductCatalog({ allProducts }: ProductCatalogProps) {
                   className="transition-all"
                 >
                   <X className="mr-2 h-4 w-4" />
-                  All
+                  Todas
                 </Button>
                 {categories.map(category => {
                   const Icon = getCategoryIcon(category);
@@ -107,15 +104,15 @@ export function ProductCatalog({ allProducts }: ProductCatalogProps) {
               </div>
             </div>
             <div className="md:w-1/3">
-               <h3 className="text-lg font-semibold mb-3">Search</h3>
+               <h3 className="text-lg font-semibold mb-3">Buscar</h3>
               <form ref={searchFormRef} action={formAction} className="relative">
                 <Input
                   id="search"
                   name="search"
                   type="search"
-                  placeholder="Search for games..."
+                  placeholder="Buscar juegos, consolas..."
                   className="pr-10"
-                  aria-label="Search for games"
+                  aria-label="Buscar juegos, consolas y accesorios"
                 />
                 <Button type="submit" size="icon" variant="ghost" className="absolute right-1 top-1/2 -translate-y-1/2 h-8 w-8">
                   <Search className="h-5 w-5 text-muted-foreground" />
@@ -133,8 +130,8 @@ export function ProductCatalog({ allProducts }: ProductCatalogProps) {
         
         {displayedProducts.length === 0 && (
           <div className="text-center col-span-full py-16">
-            <h2 className="text-2xl font-semibold mb-2">No Games Found</h2>
-            <p className="text-muted-foreground">Try adjusting your filters or search term.</p>
+            <h2 className="text-2xl font-semibold mb-2">No se encontraron productos</h2>
+            <p className="text-muted-foreground">Intenta ajustar tus filtros o término de búsqueda.</p>
           </div>
         )}
       </div>

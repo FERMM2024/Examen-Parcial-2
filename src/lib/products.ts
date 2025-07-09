@@ -4,73 +4,81 @@ export type Product = {
   description: string;
   price: number;
   image: string;
-  category: string;
+  category: 'Juegos' | 'Consolas' | 'Accesorios';
   dataAiHint: string;
 };
 
-export const products: Omit<Product, 'category'>[] = [
+export const products: Product[] = [
   {
     id: '1',
-    title: 'Stellar Odyssey',
-    description: 'Explore a vast, procedurally generated galaxy in this open-world space exploration RPG. Mine asteroids, trade with alien species, and uncover the secrets of a long-lost civilization.',
+    title: 'Elden Ring',
+    description: 'Un vasto mundo de fantasía te espera en el aclamado RPG de acción de FromSoftware. Conviértete en el Señor del Círculo.',
     price: 59.99,
     image: 'https://placehold.co/600x400.png',
-    dataAiHint: 'space exploration'
+    category: 'Juegos',
+    dataAiHint: 'fantasy warrior'
   },
   {
     id: '2',
-    title: 'Chronosplit',
-    description: 'A fast-paced, competitive first-person shooter where players manipulate time to outsmart their opponents. Rewind your own death, create time paradoxes, and master reality-bending weapons.',
-    price: 49.99,
+    title: 'PlayStation 5',
+    description: 'La última generación de consolas de Sony, con gráficos de vanguardia, tiempos de carga ultrarrápidos y el innovador control DualSense.',
+    price: 499.99,
     image: 'https://placehold.co/600x400.png',
-    dataAiHint: 'futuristic soldier'
+    category: 'Consolas',
+    dataAiHint: 'gaming console'
   },
   {
     id: '3',
-    title: 'The Whispering Forest',
-    description: 'A narrative-driven puzzle adventure set in an enchanted forest. Solve intricate environmental puzzles by manipulating flora and fauna, and unravel a story of forgotten magic.',
-    price: 29.99,
+    title: 'Controles Inalámbricos Xbox',
+    description: 'Experimenta el diseño modernizado del control inalámbrico de Xbox, con superficies esculpidas y una geometría refinada para mayor comodidad.',
+    price: 64.99,
     image: 'https://placehold.co/600x400.png',
-    dataAiHint: 'enchanted forest'
+    category: 'Accesorios',
+    dataAiHint: 'game controller'
   },
   {
     id: '4',
-    title: 'Cyber-Ronin',
-    description: 'A third-person action game set in a dystopian cyberpunk city. As a cybernetically enhanced samurai, dismantle a powerful corporation using a blend of high-tech weaponry and traditional swordplay.',
-    price: 59.99,
+    title: 'Cyberpunk 2077',
+    description: 'Sumérgete en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación corporal. Una aventura de acción y rol de mundo abierto.',
+    price: 49.99,
     image: 'https://placehold.co/600x400.png',
-    dataAiHint: 'cyberpunk samurai'
+    category: 'Juegos',
+    dataAiHint: 'cyberpunk city'
   },
   {
     id: '5',
-    title: 'Gourmet Grand Prix',
-    description: 'A whimsical and chaotic racing game where you drive food trucks in fantastical culinary-themed tracks. Use kitchen-utensil power-ups to leave your rivals in a cloud of flour.',
-    price: 39.99,
+    title: 'Nintendo Switch - Modelo OLED',
+    description: 'Juega en casa o en cualquier lugar con una vibrante pantalla OLED de 7 pulgadas. Incluye 64 GB de almacenamiento interno.',
+    price: 349.99,
     image: 'https://placehold.co/600x400.png',
-    dataAiHint: 'cartoon race'
+    category: 'Consolas',
+    dataAiHint: 'handheld console'
   },
   {
     id: '6',
-    title: 'Kingmaker\'s Gambit',
-    description: 'A deep and complex grand strategy game set in a medieval fantasy world. Manage your kingdom, engage in diplomacy, and lead your armies to victory in turn-based tactical battles.',
-    price: 39.99,
+    title: 'Auriculares SteelSeries Arctis Nova Pro',
+    description: 'Audio de alta fidelidad, claridad de micrófono con IA y comodidad para maratones de juego. El sistema Nova Pro Acoustic es tu ventaja competitiva.',
+    price: 349.99,
     image: 'https://placehold.co/600x400.png',
-    dataAiHint: 'fantasy map'
+    category: 'Accesorios',
+    dataAiHint: 'gaming headset'
   },
   {
     id: '7',
-    title: 'Voidfall',
-    description: 'A roguelike deck-builder where you descend into an ever-changing abyss. Build a powerful deck of synergistic cards to survive against cosmic horrors.',
-    price: 24.99,
+    title: 'The Legend of Zelda: Tears of the Kingdom',
+    description: 'Una aventura épica a través de las tierras y los cielos de Hyrule te espera. Crea tu propio camino en este aclamado juego de Nintendo.',
+    price: 69.99,
     image: 'https://placehold.co/600x400.png',
-    dataAiHint: 'abstract space'
+    category: 'Juegos',
+    dataAiHint: 'fantasy landscape'
   },
   {
     id: '8',
-    title: 'Project Chimera',
-    description: 'A co-op survival horror game. You and your team are scientists in a remote facility where an experiment has gone wrong, creating a shape-shifting alien monster that hunts you.',
-    price: 34.99,
+    title: 'Silla Gamer Secretlab TITAN Evo',
+    description: 'Diseñada para un rendimiento ergonómico superior. Ofrece un soporte y una personalización inigualables para largas sesiones de juego.',
+    price: 549.00,
     image: 'https://placehold.co/600x400.png',
-    dataAiHint: 'dark lab'
-  },
+    category: 'Accesorios',
+    dataAiHint: 'gaming chair'
+  }
 ];
