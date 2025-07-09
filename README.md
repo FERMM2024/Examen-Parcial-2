@@ -10,7 +10,7 @@ To get started, take a look at src/app/page.tsx.
 
 Puedes encontrar el código fuente de este proyecto en el siguiente repositorio de GitHub (recuerda reemplazar este enlace por el tuyo):
 
-[https://github.com/tu-usuario/tu-repositorio](https://github.com/tu-usuario/tu-repositorio)
+(https://github.com/FERMM2024/Examen-Parcial-2)
 
 ---
 
