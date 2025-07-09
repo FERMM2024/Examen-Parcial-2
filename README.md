@@ -18,7 +18,7 @@ Puedes encontrar el código fuente de este proyecto en el siguiente repositorio 
 
 ### Herramientas de IA Utilizadas
 
-Para el desarrollo de esta aplicación, se utilizó el **App Prototyper de Firebase Studio**, un asistente de IA conversacional basado en los modelos de lenguaje de Google.
+Para el desarrollo de esta aplicación, se utilizó el **App Prototyper de Firebase Studio**, un asistente de IA conversacional basado en los modelos de lenguaje de Google. Adicionalmente se utilizó chatgpt para solucionar la conexión con Github.
 
 ### Asistencia de la IA en el Desarrollo
 
