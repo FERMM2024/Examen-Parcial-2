@@ -6,6 +6,14 @@ To get started, take a look at src/app/page.tsx.
 
 ---
 
+## Repositorio
+
+Puedes encontrar el código fuente de este proyecto en el siguiente repositorio de GitHub (recuerda reemplazar este enlace por el tuyo):
+
+[https://github.com/tu-usuario/tu-repositorio](https://github.com/tu-usuario/tu-repositorio)
+
+---
+
 ## Documentación sobre el uso de IA
 
 ### Herramientas de IA Utilizadas
